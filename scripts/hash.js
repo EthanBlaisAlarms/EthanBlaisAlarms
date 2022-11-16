@@ -12,6 +12,11 @@ function hash(string) {
 
 const users = [
     {
+        username: "911",
+        password: 1553921598,
+        access: 3
+    },
+    {
         username: "EthanBlaisAlarms",
         password: -173674050,
         access: 5
