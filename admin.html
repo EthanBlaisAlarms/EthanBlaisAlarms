@@ -34,9 +34,18 @@
                     <p>Generate Hash</p>
                     <form >
                         <input class="textInput" id="hash" name="hash" type="text" placeholder="Text to Hash" autocomplete="off"><br>
-                        <input id="submit" name="submit" type="button" value="Generate" onclick="generateHash(this.form)">
+                        <input name="submit" type="button" value="Generate" onclick="generateHash(this.form)">
                     </form>
                     <p id="generatedHash"></p>
+                </div>
+                
+                <div class="adminTool">
+                    <p>Get Account Details</p>
+                    <form >
+                        <input class="textInput" id="requestUser" name="requestUser" type="text" placeholder="Target Username"><br>
+                        <input name="submit" type="button" value="Request" onclick="requestAccount(this.form)">
+                    </form>
+                    <p id="requestedAccount"></p>
                 </div>
             </main>
             
@@ -52,12 +61,40 @@
             const currentUser = localStorage.getItem("username")
             const access = parseInt(localStorage.getItem("access"))
             document.querySelector("#currentUser").innerHTML = currentUser
+            function noPerm(required) {
+                alert(`You do not have the required permissions to do that.\n\nRequired Level: ${required}\nYour Level: ${access}`)
+            }
             
             function generateHash(form) {
                 if (access >= 1) {
                     document.getElementById("generatedHash").innerHTML = `Generated: ${hash(form.hash.value)}`
                 } else {
-                    alert(`You do not have the required permissions to do that.\n\nRequired Level: 1\nYour Level: ${access}`)
+                    noPerm(1)
+                }
+            }
+            
+            function requestAccount(form) {
+                if (access >= 3) {
+                    if (form.requestUser.value) {
+                        let match = false
+                        users.forEach((item, n) => {
+                            if (match) { return }
+
+                            if (form.requestUser.value == item.username) {
+                                match = item
+                            }
+                        })
+                        
+                        if (match) {
+                            document.querySelector("#requestedAccount").innerHTML = `Username: ${match.username}<br>Password Hash: ${match.password}<br>Access Level: ${match.access}`
+                        } else {
+                            document.querySelector("#requestedAccount").innerHTML = "No user found matching that username."
+                        }
+                    } else {
+                        document.querySelector("#requestedAccount").innerHTML = "No user found matching that username."
+                    }
+                } else {
+                    noPerm(3)
                 }
             }
         </script>

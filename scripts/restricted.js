@@ -17,11 +17,10 @@ if (localStorage.getItem("username") && localStorage.getItem("username")) {
         document.querySelector(".waitForAuth").style.display = "none"
         document.querySelector(".requiresAuth").style.display = "block"
     } else {
-        alert("Invalid login.")
+        alert("WARNING: Authentication failed. Please log in again.")
         authFail()
     }
 } else {
-    alert("No login.")
     authFail()
 }
 
