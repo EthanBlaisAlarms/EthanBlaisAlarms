@@ -33,7 +33,7 @@
                 
                 <div class="adminTool">
                     <p>Generate Hash</p>
-                    <form >
+                    <form>
                         <input class="textInput" id="hash" name="hash" type="text" placeholder="Text to Hash" autocomplete="off"><br>
                         <input name="submit" type="button" value="Generate" onclick="generateHash(this.form)">
                     </form>
@@ -42,10 +42,20 @@
                 
                 <div class="adminTool">
                     <p>Get Account Details</p>
-                    <form >
+                    <form>
                         <input class="textInput" id="requestUser" name="requestUser" type="text" placeholder="Target Username"><br>
                         <input name="submit" type="button" value="Request" onclick="requestAccount(this.form)">
                     </form>
+                    <p id="requestedAccount"></p>
+                </div>
+                
+                <div class="adminTool">
+                    <p>Erase Site Data</p>
+                    <div class="warning">
+                        <h3>Warning:</h3>
+                        <p>This option will erase all site data from your device. This cannot be undone. Please note that any site options you have set will be reset to default settings, and you will be logged out.</p>
+                    </div>
+                    <input name="submit" type="button" value="Erase Site Data" onclick="eraseData()">
                     <p id="requestedAccount"></p>
                 </div>
             </main>
@@ -97,6 +107,11 @@
                 } else {
                     noPerm(3)
                 }
+            }
+            
+            function eraseData() {
+                localStorage.clear()
+                document.location = "index.html"
             }
         </script>
     </body>
