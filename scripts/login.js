@@ -1,5 +1,12 @@
 const errorObj = document.querySelector("#loginError")
 
+
+document.addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) {
+        login(document.querySelector("#login"))
+    }
+})
+
 function login(form) {
     let attempts = 5
     if (localStorage.getItem("lockoutTime")) {
