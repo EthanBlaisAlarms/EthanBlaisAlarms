@@ -31,9 +31,9 @@
                 <p>Logged in as <span id="currentUser"></span>. <a href="#" onclick="authFail()">Logout</a></p>
                 
                 <div class="adminTool">
+                    <p>Generate Hash</p>
                     <form >
-                        <label for="hash">Generate Hash:</label>
-                        <input id="hash" name="hash" type="text" autocomplete="off"><br>
+                        <input class="textInput" id="hash" name="hash" type="text" placeholder="Text to Hash" autocomplete="off"><br>
                         <input id="submit" name="submit" type="button" value="Generate" onclick="generateHash(this.form)">
                     </form>
                     <p id="generatedHash"></p>
