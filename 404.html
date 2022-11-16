@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>EthanBlaisAlarms</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="css/styles.css">
+        
+        <link rel="shortcut icon" href="images/favicon.ico">
+    </head>
+    <body>
+        
+        <header>
+            <a href="index.html"><img src="images/eba.png" alt="EthanBlaisAlarms logo"></a>
+        </header>
+        
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About EBA</a></li>
+                <li><a href="videos.html">Videos</a></li>
+                <li><a href="docs/index.html">Documents and Tutorials</a></li>
+                <li><a href="contact.html">Contact EBA</a></li>
+            </ul>
+        </nav>
+        
+        <main>
+            <noscript>
+                <h3>Heads up!</h3>
+                <p>This page uses JavaScript. However, it looks like JavaScript is disabled or not supported on your browser. If it's disabled, you should enable it. If your browser doesn't support it, consider an upgrade.</p>
+            </noscript>
+            <h3>Error 404 - Page Not Found</h3>
+            <p>Looks like you found... nothing! The URL you entered doesn't seem to exist. It might have been moved or deleted. If you were sent this link by someone else, please request a new link. If this error was unexpected, please contact EBA for support.</p>
+            
+            <p class="action"><a href="index.html">Return to the Home Page</a></p>
+            <p class="action"><a href="contact.html">Contact EBA</a></p>
+            
+            <p>If you contact support, be sure to include the following error code:<br><span id="404-errorCode">JS_Not_Enabled</span></p>
+        </main>
+        
+        <footer>
+            <p>&copy; Copyright EBA Software 2022<br>All Rights Reserved</p>
+        </footer>
+        
+        <script>
+            let url = location.href
+            
+            // Delete URL from GitHub URL
+            url = url.replace("https://", "")
+            url = url.replace("www.", "")
+            url = url.replace("ethanblaisalarms.github.io/", "")
+            
+            // Delete URL from local file
+            url = url.replace("file:///C:/Users/", "")
+            url = url.replace("offic/", "")
+            url = url.replace("Ethan/", "")
+            url = url.replace("Dropbox/Website/", "")
+            url = url.replace("Creative%20Cloud%20Files/", "")
+            url = url.replace("EthanBlaisAlarms/", "")
+            
+            document.getElementById("404-errorCode").innerHTML = "NotFound:" + url
+        </script>
+        
+    </body>
+</html>

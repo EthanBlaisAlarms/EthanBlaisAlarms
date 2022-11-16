@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>EthanBlaisAlarms | Admin Page</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="css/styles.css">
+        
+        <link rel="shortcut icon" href="images/favicon.ico">
+    </head>
+    <body>
+        <header>
+            <a href="index.html"><img src="images/eba.png" alt="EthanBlaisAlarms logo"></a>
+        </header>
+        
+        <div class="waitForAuth">
+            <h2>Please wait</h2>
+            <p>Just gotta check your login information before you can access this page. If you're stuck on this page, ensure JavaScript is enabled in your browser.</p>
+        </div>
+        
+        <div class="requiresAuth">
+            
+            <nav>
+                <ul>
+                    <li><a href="index.html">Site Home</a></li>
+                    <li><a href="#" id="logout">Logout</a></li>
+                </ul>
+            </nav>
+
+            <main>
+                <h3>EthanBlaisAlarms Admin Pages</h3>
+                <p>Logged in as <span id="currentUser"></span>. <a href="#" onclick="authFail()">Logout</a></p>
+                
+                <div class="adminTool">
+                    <form>
+                        <label for="hash">Generate Hash:</label>
+                        <input id="hash" name="hash" type="text"><br>
+                        <input id="submit" name="submit" type="button" value="Generate" onclick="generateHash(this.form)">
+                    </form>
+                    <p id="generatedHash"></p>
+                </div>
+            </main>
+            
+        </div>
+        
+        <footer>
+            <p>&copy; Copyright EBA Software 2022<br>All Rights Reserved</p>
+        </footer>
+        
+        <script src="scripts/hash.js"></script>
+        <script src="scripts/restricted.js"></script>
+        <script>
+            const currentUser = localStorage.getItem("username")
+            const access = parseInt(localStorage.getItem("access"))
+            document.querySelector("#currentUser").innerHTML = currentUser
+            
+            function generateHash(form) {
+                if (access >= 1) {
+                    document.getElementById("generatedHash").innerHTML = `Generated: ${hash(form.hash.value)}`
+                } else {
+                    alert(`You do not have the required permissions to do that.\n\nRequired Level: 1\nYour Level: ${access}`)
+                }
+            }
+        </script>
+    </body>
+</html>

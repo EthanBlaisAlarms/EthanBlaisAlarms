@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>EthanBlaisAlarms</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../css/styles.css">
+        
+        <link rel="shortcut icon" href="../images/favicon.ico">
+    </head>
+    <body>
+        
+        <header>
+            <a href="../index.html"><img src="../images/eba.png" alt="EthanBlaisAlarms logo"></a>
+        </header>
+        
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../about.html">About EBA</a></li>
+                <li><a href="../videos.html">Videos</a></li>
+                <li><a href="index.html">Documents and Tutorials</a></li>
+                <li><a href="../contact.html">Contact EBA</a></li>
+            </ul>
+        </nav>
+        
+        <main>
+            <h2>Wiring the Simplex 4004</h2>
+            
+            <div class="warning">
+                <h3>Safety Warning</h3>
+                <p>This device runs on high voltage. Do not wire anything while the power is plugged in. I am not responsible if you cause a fire or electric shock by disregarding this safety warning.</p>
+                <p>I am not responsible if you ruin a device due to improper wiring. Please read the instruction manual for all devices you intend to connect to this panel. Check all wiring before plugging your power in.</p>
+            </div>
+            
+            <h3>Overview</h3>
+            <p>The Simplex 4004 is a conventional fire alarm control panel with 2 built-in zones and 2 NACs.</p>
+            <p>By default, NAC 1 will be coded based on the coding option set in the panel settings. NAC 1 will be silenced when the silence button is pressed. NAC 2 will output continuious and will remain on until the panel is reset. This operation can be changed by configuring the jumpers.</p>
+            <p>The Simplex 4004 offers various expansion modules, or cards, that can be added to the panel. The 2 IDC card can add 2 zones (for a total of 4 or 8 zones). The 4 IDC card can add 4 zones (for a total of 6 or 8). You cannot use 2 of the same IDC cards (ex: for 6 zones, you cannot use 2 of the 2 IDC cards. You must use a 4 IDC card).</p>
+            <p>You can use an Annunciator Interface card to add support for non-serial annunciators. A DACT card can be used to connect to city or a dialer.</p>
+            
+            <h3>Wiring your AC Power</h3>
+            <p>The Simplex 4004 runs on 115 Volt AC, which is what a standard outlet in the United States outputs. You'll need a power cord to connect to an outlet. Please note that the cord you choose cannot have a transformer. The easiest way to get a proper cord is to take a surge protector or an extension cord. You can then cut and strip the wires. <strong>Do not under any circumstances plug the cord into a wall outlet. You can risk a short circuit, fire, or electrical shock if you do. I am not responsible for your actions.</strong> Using a wire nut, take the hot (black) wire and connect it to the black wire on the transformer. Then take the neutral (white) wire and connect it to the white wire on the transformer. Finally, if your outlet has a green wire, screw it down to the ground screw located under the transformer. Ensure all connections are secure before connecting power.</p>
+            <p>You can now plug the panel in. Don't worry, troubles are normal to see since nothing is wired into the system. <strong>Before continuing with the wiring, disconnect the AC power to avoid shorting something.</strong></p>
+            
+            <h3>Wiring the Zones</h3>
+            <p>Once the panel power is off, you can begin wiring your zones. The 4004 groups zones into groups of 2. The positive (+) for each zone in a group comes from Zone Power. For example, the Zone Power on your system board provides positive power for zones 1 and 2. The negatives for each zone are the Zone Return terminals. I direct short across Zone Power and Zone Return will cause an alarm (ex: Shorting Zone Power on the main board, and the Zone 1 Return will cause an alarm on zone 1). Please keep in mind, Zone Power is positive and Zone Return is negative. This is important when using 2-wire detectors.</p>
+            <p>Keep in mind, you'll need a resistor at the end of the line. Generally, zone resistors are 1 or 1/2 Watt and it is recommended you use a resistor of at least 1/4 Watt as lower wattage reistors could overheat and catch fire! It is normal for resistors to heat up, but if it gets too hot to touch, it's not high enough wattage.</p>
+            <p>Use a 6.8K (Blue-Gray-Red) 1/2 Watt resistor for the built-in zones. If you have any expansion cards, check your card model number and use the table below to determine the resistor you'll need.</p>
+            <table>
+                <tr>
+                    <th>Card Model</th>
+                    <th>Resistor</th>
+                </tr>
+                <tr>
+                    <td>565-575 2-IDC</td>
+                    <td>6.8K (Blue-Gray-Red) 1/2 Watt</td>
+                </tr>
+                <tr>
+                    <td>565-612 2-IDC</td>
+                    <td>3.3K (Orange-Orange-Red) 1 Watt</td>
+                </tr>
+                <tr>
+                    <td>565-589 4-IDC</td>
+                    <td>6.8K (Blue-Gray-Red) 1/2 Watt</td>
+                </tr>
+                <tr>
+                    <td>565-612 4-IDC</td>
+                    <td>3.3K (Orange-Orange-Red) 1 Watt</td>
+                </tr>
+            </table>
+            <p>You can now connect your AC Power again. If there are any alarm conditions, ensure your wiring is correct, you are using the correct resistor, and that none of the connected devices are activated (This means there is a short in your circuit). If any zone indicates a trouble condition, ensure your wiring is correct, you are using the correct resistor, and that none of the connected devices are missing (This means the panel sees an open circuit, not the resistor).</p>
+            <p>Again, before continuing on to the next step, <strong>disconnect your AC Power</strong>.</p>
+            
+            <h3>Wiring the NACs</h3>
+            <p>Remember, the NAC 1 output is coded, and on until silence by default. The NAC 2 output is continuious, and on until reset by default. Generally, NAC 1 is wired to horns, NAC 2 is wired to strobes.</p>
+            <p>Unlike zones, each NAC has it's own separate power and return. Connect the NACs to your devices. Keep in mind, polarity matters with NACs (you must match positive and negative properly). The final device on each NAC should contain a 10K EOL resistor (Brown-Black-Orange). This resistor should be at least 1/4 watt, however 1/2 watt is recommended. You can now power up the panel again. If any device activates when there is no alarm condition, check the polarity. If there are any troubles on a NAC, check your wiring, ensure you are using the correct resistor, and ensure there are no devices missing (Trouble indicates a short or open circuit).</p>
+            
+            <h3>Programming</h3>
+            <p>On the bottom of the main board are 3 switches. The one on the left opens the programming menu. Activate this switch and press ACK to view the programming menu. Refer to the programming instructions on the panel door. Once programming is complete, turn off the programming switch to reboot the panel.</p>
+            
+        </main>
+        
+        <footer>
+            <p>&copy; Copyright EBA Software 2022<br>All Rights Reserved</p>
+        </footer>
+        
+        <script>alert("Safety Warning: Only attempt if you know what you are doing. EBA is not responsible should something go wrong. Please read all instructions.")</script>
+        
+    </body>
+</html>

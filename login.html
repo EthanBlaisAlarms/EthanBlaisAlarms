@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>EthanBlaisAlarms</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="css/styles.css">
+        
+        <link rel="shortcut icon" href="images/favicon.ico">
+    </head>
+    <body>
+        
+        <header>
+            <a href="index.html"><img src="images/eba.png" alt="EthanBlaisAlarms logo"></a>
+        </header>
+        
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About EBA</a></li>
+                <li><a href="videos.html">Videos</a></li>
+                <li><a href="docs/index.html">Documents and Tutorials</a></li>
+                <li><a href="contact.html">Contact EBA</a></li>
+            </ul>
+        </nav>
+        
+        <main>
+            <noscript>
+                <h3>Heads up!</h3>
+                <p>This page uses JavaScript. However, it looks like JavaScript is disabled or not supported on your browser. If it's disabled, you should enable it. If your browser doesn't support it, consider an upgrade.</p>
+            </noscript>
+            
+            <h3>Login to EthanBlaisAlarms Admin Pages</h3>
+            <p id="loginError"></p>
+            
+            <form id="login">
+                <label for="username">Username:</label><br><input id="username" name="username" autofocus type="text"><br>
+                <label for="password">Password:</label><br><input id="password" name="password" type="password"><br>
+                <input id="submit" name="submit" type="button" value="Login" onclick="login(this.form)">
+                <p><a href="#" id="forgot">Forgot your credentials?</a><br><a href="#" id="request">Request an account</a></p>
+            </form>
+        </main>
+        
+        <footer>
+            <p>&copy; Copyright EBA Software 2022<br>All Rights Reserved</p>
+        </footer>
+        
+        <script src="scripts/hash.js"></script>
+        <script src="scripts/login.js"></script>
+        <script>
+            if (localStorage.getItem("username") && localStorage.getItem("password")) {
+                document.location = "admin.html"
+            }
+        </script>
+    </body>
+</html>

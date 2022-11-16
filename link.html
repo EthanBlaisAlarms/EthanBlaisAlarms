@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Leaving EthanBlaisAlarms</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="css/styles.css">
+        
+        <link rel="shortcut icon" href="images/favicon.ico">
+        
+        <script>
+            let dest = null
+            
+            const params = new URLSearchParams(window.location.search)
+            
+            if (params.has('dest')) {
+                switch(params.get('dest')) {
+                    case 'discord':
+                        dest = 'https://discord.gg/WEkA4uJyZ8'
+                        break;
+                    case 'insta':
+                        dest = 'https://instagram.com/ethanblaisalarms'
+                        break;
+                    case 'yt':
+                        dest = 'https://www.youtube.com/channel/UCz0uaRDVWiuHex0CyFlVXrg'
+                        break;
+                    default:
+                        alert("Error: Invalid destination. If you were sent this link by someone else, please request a new link. If this error was unexpected, please contact EBA for support.")
+                }
+                if (dest != null) {
+                    document.location = dest
+                }
+            } else {
+                alert("Error: No destination. If you were sent this link by someone else, please request a new link. If this error was unexpected, please contact EBA for support.")
+            }
+            
+            function manualRedir() {
+                if (dest == null) {
+                    alert("Error: Invalid or no destination. If you were sent this link by someone else, please request a new link. If this error was unexpected, please contact EBA for support.")
+                } else {
+                    document.location = dest
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h2>Redirecting...</h2>
+        <p onclick="manualRedir()">If you're not redirected automatically, click here.</p>
+    </body>
+</html>

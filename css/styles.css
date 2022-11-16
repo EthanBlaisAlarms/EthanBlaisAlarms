@@ -1,0 +1,272 @@
+/*
+    font-family: 'Francois One', sans-serif;
+    font-family: 'Roboto Slab', serif;
+*/
+@import url('https://fonts.googleapis.com/css2?family=Francois+One&family=Roboto+Slab:wght@400;700;900&display=swap');
+
+/* CSS Reset */
+body, header, nav, main, footer, h1, div, img, ul {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+/* Mobile Viewport */
+.mobile {
+    display: block;
+}
+.mobile-tab {
+    display: block;
+}
+.tab-desk {
+    display: none;
+}
+.desktop {
+    display: none;
+}
+
+
+
+/* Global CSS Rules */
+body {
+    background-color: #820002;
+}
+img {
+    max-width: 100%;
+    display: block;
+}
+.waitForAuth {
+    font-family: "Segoe UI", Verdana, Arial, "sans-serif";
+    font-size: 1.25em;
+    padding: 2%;
+    background-color: white;
+}
+.requiresAuth {
+    display: none;
+}
+
+/* Header CSS Rules */
+header {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    background-color: #820002;
+    height: 140px;
+}
+header img {
+    margin: 0 auto;
+    padding: 1%;
+}
+
+/* Navigation CSS Rules */
+nav {
+    padding: 1%;
+    margin-bottom: 1%;
+}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    text-align: center;
+}
+nav li {
+    font-size: 1.5em;
+    font-family: 'Francois One', sans-serif;
+    border-top: 1px solid #fff;
+}
+nav li:first-child {
+    border-top: none;
+}
+nav li a {
+    display: block;
+    color: #fff;
+    padding: 0.5em 1em;
+    text-decoration: none;
+}
+
+/* Main CSS Rules */
+main {
+    clear: both;
+    background-color: #fff;
+    padding: 2%;
+    font-family: "Segoe UI", Verdana, Arial, "sans-serif";
+    font-size: 1.25em;
+}
+h2 {
+    font-family: "Segoe UI", Verdana, Arial, "sans-serif";
+    font-weight: 500;
+    font-size: 2em;
+}
+h3 {
+    font-family: "Segoe UI", Verdana, Arial, "sans-serif";
+    font-weight: 500;
+    font-size: 1.5em;
+}
+hr {
+    color: #000;
+}
+noscript, .error {
+    border: 1px solid black;
+    background-color: red;
+    padding: 1% 1.5%;
+    margin: 1% 0;
+}
+.warning {
+    border: 1px solid black;
+    background-color: yellow;
+    padding: 0 3%;
+    margin: 1% 0;
+}
+table {
+    width: 100%;
+    background-color: #AAA;
+    padding: 0;
+    border: 1px solid #000;
+    border-collapse: collapse;
+    text-align: center;
+}
+table, td, th {
+    border: 1px solid;
+}
+.action {
+    display: inline-block;
+    font-size: 1.5em;
+    font-family: Verdana, Arial, sans-serif;
+    font-weight: bold;
+}
+.action a {
+    display: block;
+    color: #000;
+    text-align: center;
+    padding: 0.5em 1em;
+    text-decoration: none;
+}
+.form {
+    border: none;
+    margin: 0;
+}
+.video-container {
+    border-top: 2px solid black;
+}
+.video-container div {
+    clear: left;
+    border-top: 1px solid black;
+    padding-bottom: 1%;
+}
+.video-container div:first-of-type {
+    border: none;
+}
+.video {
+    border: none;
+    padding-top: 1%;
+}
+.adminTool {
+    border-top: 1px solid black;
+    padding: 1% 0;
+}
+
+/* Footer CSS Rules */
+footer {
+    background-color: #820002;
+    padding: 1%;
+}
+footer p {
+    font-family: "Segoe UI", Verdana, Arial, "sans-serif";
+    font-size: 0.75em;
+    text-align: center;
+    color: #fff;
+    padding: 0 1em;
+}
+footer p a {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+
+/* Tablet Viewport */
+@media screen and (min-width:630px) {
+    .mobile {
+        display: none;
+    }
+    .tab-desk {
+        display: block;
+    }
+    
+    /* Header CSS Rules*/
+    header {
+        position: static;
+        padding-bottom: 2%;
+    }
+    
+    /* Navigation CSS Rules */
+    nav li {
+        border-top: none;
+        display: inline-block;
+        border-right: 1px solid white;
+        font-size: 1.13em;
+    }
+    nav li:last-child {
+        border-right: none;
+    }
+    nav li a {
+        padding: .1em .75em;
+    }
+}
+
+
+
+/* Desktop Viewport */
+@media screen and (min-width:900px) {
+    .mobile-tab {
+        display: none;
+    }
+    .desktop {
+        display: block;
+    }
+    
+    .waitForAuth {
+        clear: left;
+    }
+    
+    /* Header CSS Rules */
+    header {
+        float: left;
+        width: 7%;
+        height: 5%;
+    }
+    header img {
+        margin: 10%;
+    }
+    
+    /* Navigation CSS Rules */
+    nav {
+        float: right;
+        margin: 3% 0 0 0;
+        /*margin: 4em 2.5em 0 0;*/
+        width: 90%;
+    }
+    nav ul {
+        text-align: right;
+    }
+    nav li {
+        border: none;
+        display: inline-block;
+        font-family: Verdana, Arial, sans-serif;
+        font-weight: bold;
+    }
+    nav li a {
+        text-align: center;
+    }
+    
+    /* Main CSS Rules */
+    .video {
+        float: left;
+        border: none;
+        max-width: 40%;
+        padding-top: 1%;
+    }
+    .video-details {
+        float: right;
+        max-width: 50%;
+    }
+}
