@@ -231,6 +231,13 @@ footer p a {
     nav li a {
         padding: .1em .75em;
     }
+    
+    /* Main CSS Rules */
+    .video {
+        /* 315 560 56.25 */
+        width: 560px;
+        height: 315px;
+    }
 }
 
 
@@ -282,7 +289,7 @@ footer p a {
     .video {
         float: left;
         border: none;
-        max-width: 40%;
+        width: 40%;
         padding-top: 1%;
     }
     .video-details {
