@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Leaving EthanBlaisAlarms</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/styles.css">
+        
+        <link rel="shortcut icon" href="images/favicon.ico">
+        
+        <script>
+            let dest = null
+            let file = null
+            
+            const params = new URLSearchParams(window.location.search)
+            
+            if (params.has('file')) {
+                switch(params.get('file')) {
+                    case 'firepanel.exe':
+                        dest = 'files/firepanel.exe'
+                        file = "EBA_VirtualFirePanel.exe"
+                        break;
+                    default:
+                        alert("Error: Invalid file. If you were sent this link by someone else, please request a new link. If this error was unexpected, please contact EBA for support.")
+                }
+                if (dest != null) {
+                    download(dest,file)
+                }
+            } else {
+                alert("Error: No file. If you were sent this link by someone else, please request a new link. If this error was unexpected, please contact EBA for support.")
+            }
+            function download(path, name) {
+                let link = document.createElement("a")
+                link.setAttribute("download", name)
+                link.href = path
+//                document.body.appendChild(link)
+                link.click()
+//                link.remove()
+            }
+        </script>
+    </head>
+    <body>
+        <main>
+            <h2>Your file should begin downloading</h2>
+            <p onclick="download(dest)">If it doesn't download automatically, click here.</p>
+        </main>
+    </body>
+</html>
