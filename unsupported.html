@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>EthanBlaisAlarms</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/styles.css">
+        
+        <link rel="shortcut icon" href="images/favicon.ico">
+    </head>
+    <body>
+        
+        <header>
+            <a href="index.html"><img src="images/eba.png" alt="EthanBlaisAlarms logo"></a>
+        </header>
+        
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="updates.html">Updates</a></li>
+                <li><a href="videos.html">Videos</a></li>
+                <li><a href="docs/index.html">Documents and Tutorials</a></li>
+                <li><a href="contact.html">Contact EBA</a></li>
+            </ul>
+        </nav>
+        
+        <main>
+            <div class="error">
+                <h3>Something Went Wrong</h3>
+                <p id="errorInfo">Something went wrong, but the error is not known. Please <a href="contact.html">Contact EBA</a> for support.</p>
+            </div>
+        </main>
+        
+        <footer>
+            <p>&copy; Copyright EBA Software 2022<br>All Rights Reserved</p>
+        </footer>
+        
+        <script>
+            let reason = null
+            
+            const params = new URLSearchParams(window.location.search)
+            
+            if (params.has("reason")) {
+                switch(params.get("reason")) {
+                    case "html5_app_no_support":
+                        reason = "You tried running an HTML 5 application. However, your browser does not support HTML 5 applications. Consider upgrading to a modern browser. For debugging, <a href=\"#\" onclick=\"alert(`Your user agent string is\\n${navigator.userAgent}.`)\"> check your user agent string</a>."
+                        break
+                }
+            }
+            
+            if (reason) {
+                document.querySelector("#errorInfo").innerHTML = reason
+            }
+        </script>
+        
+    </body>
+</html>
