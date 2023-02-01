@@ -1,0 +1,2 @@
+# SLLBOCES Folder
+This folder is NOT related to the EthanBlaisAlarms website. It is used as the location where the website developer places files for his schoolwork. These files are not to be treated as parts of the official webpage.
