@@ -99,9 +99,20 @@ blockquote {
     border-radius: 5px;
     border: 2px dotted black;
 }
-#container p {
+.clear {
+    clear: both;
+}
+#container p, label, input {
     font-family: "Segoe UI", Verdana, sans-serif;
     padding: 0.5em 0;
+}
+main img {
+    display: block;
+    max-width: 500px;
+}
+input {
+    height: 25px;
+    width: 100%;
 }
 
 /* Footer CSS Rules ****************************/
