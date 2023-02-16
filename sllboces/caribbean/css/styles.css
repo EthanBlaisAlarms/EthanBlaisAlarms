@@ -1,0 +1,132 @@
+/* Import Fonts ********************************/
+/* font-family: "Francois One", sans-serif; ****/
+/* font-family: "Roboto Slab", serif; **********/
+@import url('https://fonts.googleapis.com/css2?family=Francois+One&family=Roboto+Slab:wght@400;700;900&display=swap');
+
+/* Main CSS Rules ******************************/
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+body {
+    background-color: #e4f2ea;
+}
+
+/* Navigation CSS Rules ************************/
+nav {
+    width: 100%;
+    background-color: #11181e;
+    min-height: 50px;
+    text-align: center;
+    font-family: "Francois One", sans-serif;
+}
+nav ul {
+    display: block;
+    padding-top: .5em;
+}
+nav li {
+    display: inline-block;
+    list-style-type: none;
+    max-width: 15%;
+    padding: 0 2%;
+}
+nav a {
+    text-decoration: none;
+    color: #e4f2ea;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+nav a:hover {
+    background-color: #e4f2ea;
+    color: #11181e;
+}
+nav ul {
+    display: block;
+    padding-top: .5em;
+}
+.fNav {
+    background-color: #21282e;
+}
+.fNav li {
+    max-width: 10%;
+    padding: 0.5% 3% 0;
+}
+.fNav a {
+    font-size: .75em;
+}
+
+/* Header CSS Rules ****************************/
+header {
+    background-color: #FECA00;
+    min-height: 400px;
+    background-image: url("../images/home_Beach.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 20% 20%;
+    color: #e4f2ea;
+    padding: 3% 0;
+}
+header h1 {
+    font-size: 7em;
+    text-align: center;
+    background-color: #FFFFFF88;
+    color: #55585e;
+}
+header h2 {
+    font-size: 3em;
+    text-align: center;
+    background-color: #FFFFFF88;
+    color: #55585e;
+}
+h1, h2, h3, h4, h5, h6, blockquote {
+    font-family: "Segoe UI", Verdana, serif;
+}
+
+/* Main CSS Rules ******************************/
+main {
+    min-height: 500px;
+    padding: 2% 0;
+}
+#container {
+    margin: 0 auto;
+    width: 80%;
+    min-height: 500px;
+    font-size: 1.8em;
+}
+blockquote {
+    font-size: 3em;
+    color: #FECA00;
+}
+#container img {
+    float: left;
+    margin-right: 2%;
+    border-radius: 5px;
+    border: 2px dotted black;
+}
+.clear {
+    clear: both;
+}
+#container p, label, input {
+    font-family: "Segoe UI", Verdana, sans-serif;
+    padding: 0.5em 0;
+}
+main img {
+    display: block;
+    max-width: 500px;
+}
+input {
+    height: 25px;
+    width: 100%;
+}
+
+/* Footer CSS Rules ****************************/
+footer {
+    min-height: 300px;
+    background-color: #11181e;
+    color: #e4f2ea;
+    text-align: center;
+}
+footer h4, footer h5, footer h6 {
+    margin-top: 2%
+}

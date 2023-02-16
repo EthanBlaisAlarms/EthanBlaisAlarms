@@ -10,13 +10,41 @@
                 border: none;
             }
             
+            img {
+                max-width: 100%;
+                display: block;
+            }
+            
             body {
                 font-family: "Segoe UI", Verdana, sans-serif;
                 background-color: #dd0000;
             }
             
+            header {
+                min-height: 150px;
+            }
+            
+            header img {
+                width: 20%;
+                display: inline-block;
+                padding-left: 1%;
+                margin-bottom: -6px;
+            }
+            header #headText {
+                display: inline-block;
+                width: 70%;
+                min-height: 150px;
+/*                transform: translateY(-100px)*/
+            }
+            
+            h1 {
+                font-size: 5em;
+            }
+            
             header h1, header h2 {
-                padding: 2%;
+                padding: 2% 0 0 2%;
+                color: white;
+/*                transform: rotate(-10deg);*/
             }
             section {
                 border: 3px solid black;
@@ -42,8 +70,11 @@
     </head>
     <body>
         <header>
-            <h1>Ethan Blais</h1>
-            <h2>Web Developer</h2>
+            <img src="images/ethanBlais.png">
+            <div id="headText">
+                <h1>Ethan Blais</h1>
+                <h2>Web Developer</h2>
+            </div>
         </header>
         
         <section>
@@ -58,6 +89,7 @@
             <h2>My Projects</h2>
             <ul>
                 <li><a href="beagles">Beagles Project</a></li>
+                <li><a href="caribbean">Caribbean Project</a></li>
                 <li><a href="fitness">Forward Fitness Project</a></li>
             </ul>
         </section>
