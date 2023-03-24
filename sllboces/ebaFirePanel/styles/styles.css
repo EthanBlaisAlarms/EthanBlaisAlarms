@@ -1,0 +1,107 @@
+/* Global CSS */
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+img {
+    max-width: 500px;
+    display: block;
+}
+body {
+    background-color: #aa0000;
+    font-family: "Segoe UI", Verdana, Arial, "sans-serif";
+}
+table {
+    display: none;
+}
+
+/* Header CSS */
+h1 {
+    color: white;
+    padding: 10px;
+    font-size: 3em;
+}
+h2 {
+    color: white;
+    padding: 10px;
+    font-size: 1.5em;
+}
+header {
+    background-image: url("../images/panelBoot.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 75px;
+}
+
+/* Nav CSS */
+nav ul {
+    list-style-type: none;
+}
+nav li {
+    display: inline-block;
+    padding: 2%;
+}
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+nav a:hover {
+    text-decoration: underline;
+    color: black;
+    background-color: #aa8888;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+footer nav {
+    background-color: #880000;
+}
+
+/* Main CSS */
+main {
+    background-color: white;
+}
+main ul {
+    list-style-type: none;
+}
+main * {
+    padding: 1%;
+    padding-left: 3%;
+}
+main strong, main a {
+    padding: 0;
+}
+blockquote {
+    font-size: 3em;
+    font-weight: bold;
+}
+main img {
+    float: left;
+}
+p, li {
+    font-size: 1.25em;
+}
+.clear {
+    clear: both;
+}
+input {
+    background-color: #cccccc;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 1%;
+    cursor: pointer;
+}
+
+/* Footer CSS */
+footer {
+    clear: both;
+}
+h4, h5, h6, footer p {
+    color: white;
+    padding: 5px;
+}
+footer a {
+    color: white;
+}
