@@ -18,7 +18,7 @@ const users = [
     },
     {
         username: "EthanBlaisAlarms",
-        password: -173674050,
+        password: 476661430,
         access: 5
     },
     {
