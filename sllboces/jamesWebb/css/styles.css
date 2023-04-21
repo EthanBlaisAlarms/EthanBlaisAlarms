@@ -1,0 +1,93 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+img {
+	max-width: 100%;
+	border-radius: 8px;
+}
+
+
+
+body {
+	font-family: 'Segoe UI', Verdana, 'sans-serif';
+	background-color: #16A8F1;
+}
+
+h1 {
+	font-size: 5em;
+}
+h2 {
+	font-size: 2em;
+}
+
+header img {
+	float: left;
+	padding: 1px 2% 1% 1px;
+}
+header h1, header h2 {
+	text-align: right;
+	padding: 2%;
+}
+.hNav {
+	font-size: 1.5em;
+	padding: 2%;
+}
+.hNav li {
+	border: 2px solid black;
+	padding: 10px;
+}
+.hNav li:hover {
+	border: 2px solid white;
+	background-color: black;
+}
+.hNav a {
+	padding: 13px;
+}
+.fNav {
+	font-size: 1.15em;
+	padding: 1%;
+}
+.fNav li {
+	padding: 1%;
+}
+nav {
+	background-color: darkcyan;
+}
+nav li {
+	list-style-type: none;
+	display: inline-block;
+}
+nav a {
+	text-decoration: none;
+	color: black;
+}
+nav a:hover {
+	color: white;
+	font-weight: bold;
+}
+
+main {
+	clear: both;
+}
+table {
+	display: block;
+}
+blockquote {
+	font-size: 3.5em;
+}
+p {
+	padding: 1%;
+	font-size: 1.1em;
+}
+
+footer {
+	background-color: darkcyan;
+}
+.fCont {
+	padding: 2px 1%;
+}
+.fCont a {
+	color: black;
+}
