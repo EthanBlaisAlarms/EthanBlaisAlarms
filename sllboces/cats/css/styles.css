@@ -1,0 +1,53 @@
+/* Main */
+* {
+	margin: 0;
+	border: 0;
+	padding: 0;
+}
+body {
+	background-color: #5C3317;
+	color: #ccc;
+}
+table {
+	max-width: 80%;
+	margin: 0 auto;
+	background-color: #804720;
+}
+
+/* Header */
+h1 {
+	font-size: 2.5em;
+}
+h2 {
+	font-size: 1.35em;
+}
+blockquote {
+	font-size: 2em;
+}
+
+/* Content */
+main, footer {
+	border-top: 2px solid black;
+}
+main * {
+	padding: 0.5% 1.5%;
+}
+main img {
+	max-width: 200px;
+	float: left;
+}
+
+/* Footer */
+footer * {
+	padding: 0.5% 1%;
+}
+footer nav a {
+	color: white;
+	text-decoration: none;
+}
+footer nav a:hover {
+	color: #E76A1A;
+}
+footer a {
+	color: white;
+}

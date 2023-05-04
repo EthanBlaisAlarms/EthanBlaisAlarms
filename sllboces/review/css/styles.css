@@ -1,0 +1,71 @@
+/*
+0D3B66 - Blue
+FAF0CA - Tan
+F4D35E - Gold
+*/
+
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+body {
+	background-color: #0D3B66;
+	font-family: "Segoe UI", Verdana, "sans-serif";
+}
+
+h1 {
+	font-size: 5em;
+	padding: 0.5% 2%;
+}
+h2 {
+	font-size: 2.3em;
+	padding: 0 2%;
+}
+header {
+	color: white;
+}
+nav {
+	background-color: #F4D35E;
+}
+nav ul {
+	display: block;
+}
+nav li {
+	list-style-type: none;
+	display: inline-block;
+	font-size: 1.4em;
+	padding: 1% 2%;
+}
+nav a {
+	color: #0D3B66;
+}
+a:hover {
+	color: #FAF0CA;
+}
+
+main {
+	background-color: white;
+	padding: 2%;
+}
+blockquote {
+	font-size: 2.5em;
+	color: #0D3B66;
+}
+main p {
+	padding-top: 5px;
+}
+
+footer {
+	text-align: center;
+	color: white;
+	margin-top: 2%;
+}
+footer a {
+	color: white;
+}
+
+table {
+	display: none;
+}
