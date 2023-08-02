@@ -43,9 +43,9 @@
         <script>
             // Detection of old browsers that do not support the canvas element
             // Falls back to a default page
-            const params = new URLSearchParams(window.location.search);
-            if (!document.createElement("canvas").getContext && (!params.has("bypass") || params.get("bypass") !== 'true')) {
-                window.open("https://ethanblaisalarms.github.io/unsupported?reason=html5_app_no_support", "_self")
+            //const params = new URLSearchParams(window.location.search);
+            if (!document.createElement("canvas").getContext/* && (!params.has("bypass") || params.get("bypass") !== 'true')*/) {
+                window.open("https://ethanblaisalarms.github.io/unsupported?reason=html5_app_no_support", "_self");
             }
         </script>
         
