@@ -36,20 +36,20 @@
         </footer>
         
         <script>
-            let reason = null
+            let reason = null;
             
-            const params = new URLSearchParams(window.location.search)
+            const params = new URLSearchParams(window.location.search);
             
             if (params.has("reason")) {
                 switch(params.get("reason")) {
-                    case "html5_app_no_support":
-                        reason = "You tried running an HTML 5 application. However, your browser does not support HTML 5 applications. Consider upgrading to a modern browser. For debugging, <a href=\"#\" onclick=\"alert(`Your user agent string is\\n${navigator.userAgent}.`)\"> check your user agent string</a>."
-                        break
+                case "html5_app_no_support":
+                    reason = "You tried running an HTML 5 application. However, your browser does not support HTML 5 applications. Consider upgrading to a modern browser. For debugging, <a href=\"#\" onclick=\"alert(`Your user agent string is\\n${navigator.userAgent}.`)\"> check your user agent string</a>.";
+                    break;
                 }
             }
             
             if (reason) {
-                document.querySelector("#errorInfo").innerHTML = reason
+                document.querySelector("#errorInfo").innerHTML = reason;
             }
         </script>
         

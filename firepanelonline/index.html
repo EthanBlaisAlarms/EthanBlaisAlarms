@@ -24,7 +24,7 @@
               border-left-color: #F00;
               padding-left: 10px;
               position: absolute;
-              left: 50%%;
+              left: 50%;
               width: 600px;
               margin-left: -260px
           }
@@ -43,8 +43,8 @@
         <script>
             // Detection of old browsers that do not support the canvas element
             // Falls back to a default page
-            if (!document.createElement("canvas").getContext)
-            {
+            const params = new URLSearchParams(window.location.search);
+            if (!document.createElement("canvas").getContext && (!params.has("bypass") || params.get("bypass") !== 'true')) {
                 window.open("https://ethanblaisalarms.github.io/unsupported?reason=html5_app_no_support", "_self")
             }
         </script>
@@ -54,7 +54,7 @@
     </head>
     <body>
         
-        <div style="display: inline-block; -webkit-user-select: none; text-align: left;">
+        <div style="display: inline-block; -webkit-user-select: none; user-select: none; text-align: left;">
             <canvas id="MMFCanvas" width="1920" height="1080">
     	        Your browser does not support Canvas.
             </canvas>
