@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<html lang="en">
+    <head>
+        <title>EBA OS - Web Home</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../styles.css">
+        
+        <link rel="shortcut icon" href="files/favicon.ico">
+        
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-XWQ2PYJE3S"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-XWQ2PYJE3S');
+        </script>
+    </head>
+    <body>
+
+        <div id="header">
+            <a href="index.html"><img src="../files/EBA.png" alt="EthanBlaisAlarms logo"></a>
+        </div>
+        
+        <div id="nav">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../videos.html">Videos</a></li>
+                <li><a href="../software.html">Software Download</a></li>
+                <li><a href="../contact.html">Contact EBA</a></li>
+            </ul>
+        </div>
+        
+        <div id="main">
+            <noscript>
+                <div class="msgbox error">
+                    <h3>Heads up!</h3>
+                    <p>This page uses JavaScript. However, it looks like JavaScript is disabled or not supported on your browser. If it's disabled, you should enable it. If your browser doesn't support it, consider an upgrade.</p>
+                </div>
+            </noscript>
+            <h2>EBA OS Web Home</h2>
+            <p ebaos="test" id="test">$variable</p>
+            <div id="error-noebaos" class="msgbox error">
+                <h3>EBA OS Alert!</h3>
+                <p>This page interacts with EBA OS directly. However, it doesn't look like you're viewing this page on EBA OS.</p>
+            </div>
+        </div>
+        
+        <div id="footer">
+            <p>Property of EthanBlaisAlarms<br>&copy; Copyright EthanBlaisAlarms 2023<br>All Rights Reserved</p>
+        </div>
+
+        <script>
+            function ebaosLoaded() {
+                document.querySelector('#error-noebaos').style['display'] = 'none';
+            }
+        </script>
+        <button id="loadEBAOS" class="hidden" onclick="ebaosLoaded()">Load EBA OS</button>
+    </body>
+</html>
