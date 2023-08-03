@@ -23,28 +23,25 @@ img {
     max-width: 100%;
     display: block;
 }
-.hidden {
+#error-noebaos {
     display: none;
 }
 
 /* Header CSS Rules */
 #header {
     position: static;
-    position: -webkit-sticky;
     top: 0;
     background-color: #820002;
-    height: 140px;
-    padding-bottom: 2%;
 }
 #header img {
     margin: 0 auto;
-    padding: 1%;
+    padding-top: 10px;
 }
 
 /* Navigation CSS Rules */
 #nav {
-    padding: 1%;
-    margin-bottom: 1%;
+    margin: 0 auto;
+    width: 300px;
 }
 #nav ul {
     list-style-type: none;
@@ -52,10 +49,12 @@ img {
     text-align: center;
 }
 #nav li {
-    font-size: 1.13em;
+    font-size: 1.2em;
+    font-weight: 500;
     border-top: none;
-    display: inline-block;
-    border-right: 1px solid white;
+    display: block;
+    border-bottom: 1px solid white;
+    padding: 1%;
 }
 #nav li a {
     display: block;
@@ -64,7 +63,7 @@ img {
     text-decoration: none;
 }
 #nav li:last-child {
-    border-right: none;
+    border-bottom: none;
 }
 
 /* Main CSS Rules */
