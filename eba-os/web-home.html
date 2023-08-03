@@ -32,10 +32,14 @@
                     <p>This page uses JavaScript. However, it looks like JavaScript is disabled or not supported on your browser. If it's disabled, you should enable it. If your browser doesn't support it, consider an upgrade.</p>
                 </div>
             </noscript>
-            <h2>EBA OS Web Home</h2>
+            <h2>EBA Web - Home</h2>
             <div id="error-noebaos" class="msgbox error">
                 <h3>EBA OS Alert!</h3>
                 <p>This page interacts with EBA OS directly. However, it doesn't look like you're viewing this page on EBA OS.</p>
+            </div>
+            <div id="ie-warning" class="msgbox warning" style="display: none;">
+                <h3>Security Warning</h3>
+                <p>EBA Web is powered by Internet Explorer 11. IE11 is no longer supported by Microsoft and is no longer receiving security patches. Please use caution while browsing the web with EBA Web.</p>
             </div>
             <p>EBA OS Version: <span id="osVer">Unknown</span></p>
         </div>
@@ -50,6 +54,7 @@
                 if (window.location.search.indexOf('?ebaos=true') == -1) {
                     return document.getElementById('error-noebaos').style['display'] = 'block';
                 }
+                document.getElementById('ie-warning').style['display'] = 'block';
 
                 // Verify Data
                 if (window.location.search.indexOf('&data=') == -1) { return; }
