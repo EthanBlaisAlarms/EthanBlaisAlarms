@@ -89,6 +89,17 @@ a {
     text-decoration: none;
     font-weight: 500;
 }
+button {
+    height: 3em;
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid black;
+    background-color: #ddd;
+    margin-bottom: 1%;
+}
+button:hover {
+    background-color: #ccc;
+}
 
 /* Message Boxes */
 .msgbox {
@@ -99,9 +110,6 @@ a {
 }
 .error {
     background-color: red;
-    padding: 0 3%;
-    margin: 1% 0;
-    border-radius: 20px;
 }
 .warning {
     background-color: yellow;
