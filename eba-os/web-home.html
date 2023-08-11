@@ -41,53 +41,30 @@
                 <h3>Security Warning</h3>
                 <p>EBA Web is powered by Internet Explorer 11. Internet Explorer is no longer supported by Microsoft and is no longer receiving security patches. Please use caution while browsing the web with EBA Web.</p>
                 <p>Interaction between a website and EBA OS is allowed. EBA OS will only ever interact with websites under ethanblaisalarms.github.io.</p>
-                <button onclick="sendRequest('app:eba-web:close')">Close EBA Web</button>
+                <button onclick="sendRequest('app:eba-web', 'quit')">Close EBA Web</button>
             </div>
             <p>EBA OS Version: <span id="osVer">Unknown</span></p>
             <h3>Testing EBA OS Interactions</h3>
             <p>The buttons below will send a request to EBA OS:</p>
-            <button onclick="sendRequest('app:system-home')">Open System Home</button>
-            <button onclick="sendRequest('app:audio-player')">Open Audio Player</button>
-            <button onclick="sendRequest('restart')">Restart EBA OS</button>
-            <button onclick="sendRequest('shutdown')">Shut Down EBA OS</button>
+            <button onclick="sendRequest('app:system-home', 'launch')">Open System Home</button>
+            <button onclick="sendRequest('app:audio-player', 'launch')">Open Audio Player</button>
+            <button onclick="sendRequest('sys:power', 'restart')">Restart EBA OS</button>
+            <button onclick="sendRequest('sys:power', 'shutdown')">Shut Down EBA OS</button>
         </div>
-        
+
         <div id="footer">
             <p>Property of EthanBlaisAlarms<br>&copy; Copyright EthanBlaisAlarms 2023<br>All Rights Reserved</p>
         </div>
 
+        <script type="text/javascript" src="../ebaos.js"></script>
         <script type="text/javascript">
-            var ebaos = true;
-            var data;
-
-            function loadEBAOS() {
-                // Verify EBA OS
-                if (window.location.search.indexOf('?ebaos=true') == -1) {
-                    ebaos = false;
-                    return document.getElementById('error-noebaos').style['display'] = 'block';
-                }
+            // It is up to the web page to provide the onEBAOS() function if using the EBA OS library
+            function onEBAOS() {
                 document.getElementById('ie-warning').style['display'] = 'block';
-
-                // Verify Data
-                if (window.location.search.indexOf('&data=') == -1) { return; }
-                data = window.location.search.substring(window.location.search.indexOf('&data=') + 6, window.location.search.length);
-                try {
-                    data = JSON.parse(decodeURI(data));
-                }
-                catch (err) {
-                    alert('Error: Invalid JSON data. ' + JSON.stringify(err));
-                    return;
-                }
-
-                // Use Data
+                
+                if (!data) { return; }
                 if (data.version) { document.getElementById('osVer').innerHTML = data.version; }
             }
-            function sendRequest(request) {
-                if (!ebaos) { return alert('To use this feature, you must view this page on EBA OS.'); }
-                document.location = 'ebaos://' + request + '/'
-            }
-
-            loadEBAOS();
         </script>
     </body>
 </html>
