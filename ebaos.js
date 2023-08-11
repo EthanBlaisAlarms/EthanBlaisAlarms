@@ -35,10 +35,12 @@ function checkEBAOS() {
 		}
 		onEBAOS(data);
 }
-function sendRequest(request, data) {
+function sendRequest(app, request, data) {
 		if (!ebaos) { return alert('To use this feature, you must view this page on EBA OS.'); }
+		if (!app) { return alert('Invalid request. Missing target application.'); }
+		if (!request) { return alert('Invalid request. Missing request type.'); }
 		if (typeof data == 'object') { data = JSON.stringify(data); }
-		document.location = 'ebaos://' + request + '/' + (data ? data + '/' : '');
+		document.location = 'ebaos://' + app + '/' + request + '/' + (data ? data + '/' : '');
 }
 
 checkEBAOS();
