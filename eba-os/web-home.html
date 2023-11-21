@@ -47,7 +47,7 @@
             <h3>Testing EBA OS Interactions</h3>
             <p>The buttons below will send a request to EBA OS:</p>
             <button onclick="sendRequest('system-home', 'launch')">Open System Home</button>
-            <button onclick="sendRequest('audio-player', 'launch')">Open Audio Player</button>
+            <button onclick="sendRequest('media-player', 'launch')">Open Audio Player</button>
             <button onclick="sendRequest('system', 'restart')">Restart EBA OS</button>
             <button onclick="sendRequest('system', 'shutdown')">Shut Down EBA OS</button>
         </div>
@@ -65,6 +65,7 @@
                 if (data.version) { document.getElementById('osVer').innerHTML = data.version; }
             }
         </script>
+        <!-- Import the EBA OS library -->
         <script type="text/javascript" src="../ebaos.js"></script>
     </body>
 </html>
