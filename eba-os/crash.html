@@ -41,6 +41,7 @@
 
             <h3>MANUALLY_INITIATED</h3>
             <p>MANUALLY_INITIATED occurs when a user manually initiates a crash. Generally, this is done by pressing CTRL+END. Since this error is manually initiated, no further action is required.</p>
+            <button onclick="sendRequest('system', 'crash', 'MANUALLY_INITIATED:SystemApp')">Trigger a Manual Crash</button>
 
             <h3>MISSING_OS_EXECUTABLE</h3>
             <p>MISSING_OS_EXECUTABLE occurs when EBA OS attempts to load a system executable, but the executable is missing.</p>
