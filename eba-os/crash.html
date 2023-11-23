@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>EBA OS - Crash</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../styles.css">
+        
+        <link rel="shortcut icon" href="../files/favicon.ico">
+
+        <!-- Import Libraries -->
+        <script type="text/javascript" src="../json2.js"></script>
+    </head>
+    <body>
+
+        <div id="header">
+            <a href="../index.html"><img src="../files/EBA.png" alt="EthanBlaisAlarms logo"></a>
+        </div>
+        
+        <div id="nav">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../videos.html">Videos</a></li>
+                <li><a href="../software.html">Software Download</a></li>
+                <li><a href="../contact.html">Contact EBA</a></li>
+            </ul>
+        </div>
+        
+        <div id="main">
+            <noscript>
+                <div class="msgbox error">
+                    <h3>Heads up!</h3>
+                    <p>This page uses JavaScript. However, it looks like JavaScript is disabled or not supported on your browser. If it's disabled, you should enable it. If your browser doesn't support it, consider an upgrade.</p>
+                </div>
+            </noscript>
+            <h2>EBA OS Crashes</h2>
+            <div id="error-noebaos" class="msgbox error">
+                <h3>EBA OS Alert!</h3>
+                <p>This page interacts with EBA OS directly. However, it doesn't look like you're viewing this page on EBA OS.</p>
+            </div>
+            <p>When EBA OS encounters an error it cannot recover from, EBA OS will crash. Generally, when EBA OS crashes, it'll display an error code describing the error. Sometimes, additional information about the crash may be displayed. After EBA OS crashes, your system will reboot automatically and EBA OS will run Automatic Repair to diagnose the cause of the crash. A detailed description of various errors is available below.</p>
+
+            <h3>MANUALLY_INITIATED</h3>
+            <p>MANUALLY_INITIATED occurs when a user manually initiates a crash. Generally, this is done by pressing CTRL+END. Since this error is manually initiated, no further action is required.</p>
+
+            <h3>MISSING_OS_EXECUTABLE</h3>
+            <p>MISSING_OS_EXECUTABLE occurs when EBA OS attempts to load a system executable, but the executable is missing.</p>
+
+            <h3>NO_BOOTFILE</h3>
+            <p>NO_BOOTFILE occurs when EBA OS attempts to boot normally, but the boot file is missing. You'll need to repair EBA OS to fix this error.</p>
+
+            <h3>SYSTEM_EXCEPTION</h3>
+            <p>SYSTEM_EXCEPTION occurs when a critical system file is missing while EBA OS is running.</p>
+
+            <h3>UNKNOWN_OPERATING_SYSTEM</h3>
+            <p>UNKNOWN_OPERATING_SYSTEM occurs when EBA OS is unable to read the system information file. You may need to repair EBA OS to fix this error.</p>
+
+            <h3>UNKNOWN_PARTITION</h3>
+            <p>UNKNOWN_PARTITION occurs when the recovery environment attempts to perform a repair action, but an EBA OS partition was not found.</p>
+
+            <h3>UNMOUNTABLE_BOOT_VOLUME</h3>
+            <p>UNMOUNTABLE_BOOT_VOLUME occurs when a required partition cannot be mounted. The partition may be missing. Sometimes, rebooting your system can fix this error. However, you may need to repair your installation of EBA OS if that does not work.</p>
+        </div>
+
+        <div id="footer">
+            <p>Property of EthanBlaisAlarms<br>&copy; Copyright EthanBlaisAlarms 2023<br>All Rights Reserved</p>
+        </div>
+
+        <!-- Import the EBA OS library -->
+        <script type="text/javascript" src="../ebaos.js"></script>
+    </body>
+</html>
