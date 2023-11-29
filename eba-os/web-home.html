@@ -37,6 +37,12 @@
                 <h3>EBA OS Alert!</h3>
                 <p>This page interacts with EBA OS directly. However, it doesn't look like you're viewing this page on EBA OS.</p>
             </div>
+            <div id="ie7-error" class="msgbox error" style="display: none;">
+                <h3>Internal Error</h3>
+                <p>EBA Web is currently running on Internet Explorer 7 compatibility mode. Some websites might not load properly.</p>
+                <p>Restarting EBA OS might fix this issue.</p>
+                <button onclick="sendRequest('eba-web', 'quit')">Close EBA Web</button>
+            </div>
             <div id="ie-warning" class="msgbox warning" style="display: none;">
                 <h3>Security Warning</h3>
                 <p>EBA Web is powered by Internet Explorer 11. Internet Explorer is no longer supported by Microsoft and is no longer receiving security patches. Please use caution while browsing the web with EBA Web.</p>
@@ -60,9 +66,19 @@
             // It is up to the web page to provide the onEBAOS() function if using the EBA OS library
             function onEBAOS() {
                 document.getElementById('ie-warning').style['display'] = 'block';
+                iecheck();
                 
                 if (!data) { return; }
                 if (data.version) { document.getElementById('osVer').innerHTML = data.version; }
+            }
+
+            function iecheck() {
+                var agent = navigator.userAgent;
+                if (agent.indexOf("MSIE") == -1) { return; }
+                if (agent.indexOf("compatible") == -1) { return; }
+
+                // Compatibility Mode
+                document.getElementById('ie7-error').style['display'] = 'block';
             }
         </script>
         <!-- Import the EBA OS library -->

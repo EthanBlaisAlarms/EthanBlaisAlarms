@@ -16,31 +16,31 @@ var ebaos = true;
 var data;
 
 function checkEBAOS() {
-		// Verify EBA OS
-		if (window.location.search.indexOf('?ebaos=true') == -1) {
-				ebaos = false;
-				return document.getElementById('error-noebaos').style['display'] = 'block';
-		}
+	// Verify EBA OS
+	if (window.location.search.indexOf('?ebaos=true') == -1) {
+		ebaos = false;
+		return document.getElementById('error-noebaos').style['display'] = 'block';
+	}
 
-		// Verify Data
-		if (window.location.search.indexOf('&data=') == -1) { return onEBAOS(); }
-		data = window.location.search.substring(window.location.search.indexOf('&data=') + 6, window.location.search.length);
-		try {
-				data = JSON.parse(decodeURI(data));
-		}
-		catch (err) {
-				alert('Error: Invalid JSON data. ' + JSON.stringify(err));
-				onEBAOS();
-				return;
-		}
-		onEBAOS(data);
+	// Verify Data
+	if (window.location.search.indexOf('&data=') == -1) { return onEBAOS(); }
+	data = window.location.search.substring(window.location.search.indexOf('&data=') + 6, window.location.search.length);
+	try {
+		data = JSON.parse(decodeURI(data));
+	}
+	catch (err) {
+		alert('Error: Invalid JSON data. ' + JSON.stringify(err));
+		onEBAOS();
+		return;
+	}
+	onEBAOS(data);
 }
 function sendRequest(app, request, data) {
-		if (!ebaos) { return alert('To use this feature, you must view this page on EBA OS.'); }
-		if (!app) { return alert('Invalid request. Missing target application.'); }
-		if (!request) { return alert('Invalid request. Missing request type.'); }
-		if (typeof data == 'object') { data = JSON.stringify(data); }
-		document.location = 'ebaos://' + app + '/' + request + '/' + (data ? data + '/' : '');
+	if (!ebaos) { return alert('To use this feature, you must view this page on EBA OS.'); }
+	if (!app) { return alert('Invalid request. Missing target application.'); }
+	if (!request) { return alert('Invalid request. Missing request type.'); }
+	if (typeof data == 'object') { data = JSON.stringify(data); }
+	document.location = 'ebaos://' + app + '/' + request + '/' + (data ? data + '/' : '');
 }
 
 checkEBAOS();
