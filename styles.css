@@ -86,7 +86,7 @@ hr {
 }
 a {
     color: #000000;
-    text-decoration: none;
+    text-decoration: underline;
     font-weight: 500;
 }
 button {
@@ -99,6 +99,10 @@ button {
 }
 button:hover {
     background-color: #ccc;
+}
+.form {
+    border: none;
+    margin: 0;
 }
 
 /* Message Boxes */

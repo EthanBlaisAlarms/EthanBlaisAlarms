@@ -28,20 +28,20 @@
         <div id="main">
             <noscript>
                 <div class="msgbox error">
-                    <h3>Heads up!</h3>
-                    <p>This page uses JavaScript. However, it looks like JavaScript is disabled or not supported on your browser. If it's disabled, you should enable it. If your browser doesn't support it, consider an upgrade.</p>
+                    <h3>Uh oh! <strong>JavaScript is disabled</strong>!</h3>
+                    <p><strong>It looks like JavaScript is disabled.</strong> This page using JavaScript to function properly. Consider enabling JavaScript.</p>
                 </div>
             </noscript>
             <h2>EBA Web - Home</h2>
             <div id="error-noebaos" class="msgbox error">
-                <h3>EBA OS Alert!</h3>
-                <p>This page interacts with EBA OS directly. However, it doesn't look like you're viewing this page on EBA OS.</p>
+                <h3>Uh oh! <strong>You're not using EBA OS</strong>!</h3>
+                <p>This page is meant to be viewed on EBA OS.</p>
             </div>
             <div id="ie7-error" class="msgbox error" style="display: none;">
-                <h3>Internal Error</h3>
+                <h3>Uh oh! <strong>Compatibility Mode Enabled</strong></h3>
                 <p>EBA Web is currently running on Internet Explorer 7 compatibility mode. Some websites might not load properly.</p>
-                <p>Restarting EBA OS might fix this issue.</p>
-                <button onclick="sendRequest('eba-web', 'quit')">Close EBA Web</button>
+                <p>Rebooting might fix this issue.</p>
+                <button onclick="sendRequest('system', 'reboot')">Reboot EBA OS</button>
             </div>
             <div id="ie-warning" class="msgbox warning" style="display: none;">
                 <h3>Security Warning</h3>
