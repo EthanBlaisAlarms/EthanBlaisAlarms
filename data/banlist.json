@@ -1,0 +1,2 @@
+{ "type": "test-perm", "target": "test", "reason": "Test Blacklist Mode is enabled.", "expires": false }
+{ "type": "test", "target": "test", "reason": "Test Blacklist Mode is enabled.", "expires": true, "expiry": "December 31st, 2099" }
