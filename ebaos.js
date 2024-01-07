@@ -1,6 +1,6 @@
 // EBA OS Interaction Library
 // Property of EthanBlaisAlarms
-// © Copyright EthanBlaisAlarms 2023
+// © Copyright EthanBlaisAlarms 2024
 // All Rights Reserved
 
 // This library is used for pages that can interact with EBA OS
